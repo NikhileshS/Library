@@ -1,20 +1,6 @@
-const btn = document.querySelector('.btn');
-const grid = document.querySelector('grid');
+const grid = document.querySelector('.grid');
 
-const title = document.createElement('div');
-title.textContent = 'Title :' 
-const author = document.createElement('div');
-author.textContent = 'Author :'
-const page = document.createElement('div');
-page.textContent = 'Pages :'
-const remove = document.createElement('button');
-remove.textContent = 'X'
-const container = document.createElement('div');
 
-container.appendChild(title);
-container.appendChild(remove);
-container.appendChild(author);
-container.appendChild(page);
 
 function library(name,author,page){
     this.name = name;
@@ -22,6 +8,44 @@ function library(name,author,page){
     this.page = page;
 }
 
-const lib = []
+
+const btn = document.querySelector('.btn');
+btn.addEventListener('click',function addbutton(){
+
+    const books = new library('steve diary','steve','67');
+
+    const title = document.createElement('div');
+    title.textContent = `Title : ${books.name}`;
+    title.classList.add('title'); 
+
+    const author = document.createElement('div');
+    author.textContent = `Author : ${books.author}`
+    author.classList.add('author');
+
+    const page = document.createElement('div');
+    page.textContent = `Pages : ${books.page}`;
+    page.classList.add('pages');
+
+    const remove = document.createElement('button');
+    remove.textContent = 'X';
+    remove.classList.add('removebtn');
+    remove.addEventListener('click',() =>{
+        grid.removeChild(container);
+    })
+
+    const container = document.createElement('div');
+    container.classList.add('gridcon');
+
+    container.appendChild(title);
+    container.appendChild(author);
+    container.appendChild(page);
+    container.appendChild(remove);
+    grid.appendChild(container);
+
+})
+
+
+
+
 
 
