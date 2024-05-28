@@ -1,0 +1,38 @@
+:root{
+    --background : rgb(250, 248, 242);
+    --font : 1rem;
+}
+html,body{
+    height: 100%;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+}
+
+#title{
+    height: min(50px,10vh);
+}
+
+.grid{
+    display: grid;
+    width: 100vw;
+    grid-template-rows: minmax(150px,200px);
+    grid-template-columns: minmax(100px,150px);
+    padding-left: 100px;
+    padding-top: 100px;
+}
