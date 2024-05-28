@@ -30,7 +30,7 @@ body{
     height: min(150px,20vh);
     line-height: min(150px,20vh);
     background-color: rgba(24, 26, 23, 0.623);
-    font-size: 5rem;
+    font-size: clamp(2rem,10vw,5rem);
     color: azure;
 }
 
@@ -44,7 +44,7 @@ body{
     grid-auto-rows: var(--row);
     grid-auto-columns: var(--column);
 }
-button{
+.btn{
     border-style: dashed;
     font-weight: bolder;
     font-size: clamp(0.5rem,10vw,2rem);
@@ -53,4 +53,8 @@ button{
 
 button:hover{
     background-color: rgba(166, 212, 212, 0.952);
+}
+
+.gridcon{
+    
 }
