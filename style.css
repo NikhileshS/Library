@@ -1,9 +1,12 @@
 :root{
     --background : rgb(250, 248, 242);
     --font : 1rem;
+    --row : minmax(150px,275px);
+    --column : minmax(150px,0.17fr);
 }
 html,body{
     height: 100%;
+    overflow-x: hidden;
 }
 
 body{
@@ -21,18 +24,33 @@ body{
     width: 100%;
     height: 100%;
     text-align: center;
-    
 }
 
 #title{
-    height: min(50px,10vh);
+    height: min(150px,20vh);
+    line-height: min(150px,20vh);
+    background-color: rgba(24, 26, 23, 0.623);
+    font-size: 5rem;
+    color: azure;
 }
 
 .grid{
     display: grid;
     width: 100vw;
-    grid-template-rows: minmax(150px,200px);
-    grid-template-columns: minmax(100px,150px);
-    padding-left: 100px;
+    grid-template-rows: repeat(auto-fit,var(--row));
+    grid-template-columns: repeat(auto-fit,var(--column));
+    padding-left: min(5vw,50px);
     padding-top: 100px;
+    grid-auto-rows: var(--row);
+    grid-auto-columns: var(--column);
+}
+button{
+    border-style: dashed;
+    font-weight: bolder;
+    font-size: clamp(0.5rem,10vw,2rem);
+    background-color: rgba(149, 190, 190, 0.384);
+}
+
+button:hover{
+    background-color: rgba(166, 212, 212, 0.952);
 }
