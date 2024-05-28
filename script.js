@@ -1,4 +1,9 @@
 const grid = document.querySelector('.grid');
+const submit = document.querySelector('.submit');
+const dialog = document.querySelector('dialog');
+const contain  = document.querySelector('.container');
+const exit = document.querySelector('.delete');
+
 
 
 
@@ -9,8 +14,13 @@ function library(name,author,page){
 }
 
 
+
 const btn = document.querySelector('.btn');
-btn.addEventListener('click',function addbutton(){
+btn.addEventListener('click',()=>{
+    dialog.showModal();
+})
+
+submit.addEventListener('click',function addbutton(){
 
     const books = new library('steve diary','steve','67');
 
@@ -41,11 +51,9 @@ btn.addEventListener('click',function addbutton(){
     container.appendChild(page);
     container.appendChild(remove);
     grid.appendChild(container);
-
+    dialog.close();
 })
 
-
-
-
-
-
+exit.addEventListener('click',() =>{
+    dialog.close();
+})
