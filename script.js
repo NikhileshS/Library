@@ -3,6 +3,7 @@ const submit = document.querySelector('.submit');
 const dialog = document.querySelector('dialog');
 const contain  = document.querySelector('.container');
 const exit = document.querySelector('.delete');
+const form = document.querySelector('form');
 
 
 
@@ -20,9 +21,16 @@ btn.addEventListener('click',()=>{
     dialog.showModal();
 })
 
-submit.addEventListener('click',function addbutton(){
+submit.addEventListener('click',function addbutton(event){
+    let name = document.getElementById('book-name').value;
+    let bookAuthor = document.getElementById('book-author').value;
+    let bookPage = document.getElementById('book-pages').value;
 
-    const books = new library('steve diary','steve','67');
+    if(name === ''| bookAuthor === ''| bookPage === ''){
+        alert('Please fill the following forms with valid info');
+    }
+    else{
+    const books = new library(name,bookAuthor,bookPage);
 
     const title = document.createElement('div');
     title.textContent = `Title : ${books.name}`;
@@ -52,8 +60,12 @@ submit.addEventListener('click',function addbutton(){
     container.appendChild(remove);
     grid.appendChild(container);
     dialog.close();
+    form.reset();
+    event.preventDefault();
+}
 })
 
 exit.addEventListener('click',() =>{
     dialog.close();
+    form.reset();
 })

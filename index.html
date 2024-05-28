@@ -11,19 +11,19 @@
     <div class="container">
         <header id="header">Library</header>
             <dialog>
-                <form method = 'dialog'>
+                <form for="bookform" method = 'dialog'>
                     
                         <label for="title">Title :</label>
-                        <input type="text" id="title">
+                        <input type="text" id="book-name" for="book-name" required>
                     
                         <label for="author">Author :</label>
-                        <input type="text" id="author">
+                        <input type="text" id="book-author" for='book-author' required>
                     
                         <label for="pages">Pages read :</label>
-                        <input type="number" id="pages">
-                        
+                        <input type="number" id="book-pages" for="book-pages" required>
+
                     <button type="button" class="delete">Cancel</button>
-                    <button type="button" class="submit">Submit</button>
+                    <button type="submit" class="submit">Submit</button>
                     
                 
                 </form>
